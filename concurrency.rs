@@ -18,6 +18,7 @@ fn main() {
     println!("{}", acc);
 }
 
+// Following is the correct, valid code
 
 // use std::thread;
 // use std::sync::{Arc,Mutex};

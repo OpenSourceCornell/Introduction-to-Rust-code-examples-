@@ -2,10 +2,12 @@
 #include <vector>
 #include <string>
 
+using namespace std;
+
 int main() {
-    std::vector<std::string> v;
+    vector<string> v;  // the first owner
     v.push_back("Hello");
-    std::string& x = v[0];
-    v.push_back("world");
-    std::cout << x;
+    string& x = v[0];  // the second owner
+    v.push_back("world");  // the first owner frees the underlying memory
+    cout << x;  // the second owner uses the freed (invalid) memory
 }

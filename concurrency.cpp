@@ -9,10 +9,11 @@ int main() {
     int acc = 0;
 
     vector<thread> threads;
+    // create 10 threads
     for (int i = 0; i < 10; i++) {
         threads.push_back(thread([&]() {
             for (int j = 0; j < 100000; j++) {
-                acc++;
+                acc++;  // data race happens here; acc is not synchronized
             }
         }));
     }
